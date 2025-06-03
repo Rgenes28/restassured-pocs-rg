@@ -1,0 +1,29 @@
+plugins {
+    id("java")
+}
+
+group = "restassured"
+version = "1.0-SNAPSHOT"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation(platform("org.junit:junit-bom:5.10.0"))
+    testImplementation("org.junit.jupiter:junit-jupiter")
+    // https://mvnrepository.com/artifact/org.hamcrest/hamcrest-all
+    testImplementation("org.hamcrest:hamcrest-all:1.3")
+    testImplementation 'io.rest-assured:json-path:5.4.0'
+    implementation 'io.rest-assured:rest-assured:5.4.0'
+    testImplementation 'io.rest-assured:json-path:5.4.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+    testImplementation 'com.fasterxml.jackson.core:jackson-databind:2.17.0'
+    implementation 'org.apache.logging.log4j:log4j-core:2.20.0'
+    implementation 'org.apache.logging.log4j:log4j-api:2.20.0'
+
+}
+
+tasks.test {
+    useJUnitPlatform()
+}
